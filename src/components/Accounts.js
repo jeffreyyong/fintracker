@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
-import Header from './Header';
+import { ScrollView } from 'react-native';
+import Header from './common/Header';
+import AccountDetail from './AccountDetail';
 
 export default class Accounts extends Component {
+    state = { accounts: [] };
+
+    renderAccounts() {
+        return this.state.accounts.map(account =>
+            <AccountDetail key={account.name} account={account} />
+        );
+    }
+
     render() {
+        console.log(this.state);
         return (
-            <Header headerText={'Accounts'} />
+            <ScrollView>
+                <Header headerText={'Accounts'} />
+                {this.renderAccounts()}
+            </ScrollView>
         );
     }
 }
