@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Header from './src/components/Header';
+import Header from './src/components/common/Header';
 import Accounts from './src/components/Accounts';
 
 
@@ -38,7 +38,7 @@ const BottomNavigator = createBottomTabNavigator({
     screen: Home,
     navigationOptions: {
       tabBarLabel: 'Home',
-      tabBarIcon: ({ tintColor }) => (
+      tabBarIcon: () => (
         <Icon name='home' size={26} />
       )
     }
@@ -47,7 +47,7 @@ const BottomNavigator = createBottomTabNavigator({
     screen: Accounts,
     navigationOptions: {
       tabBarLabel: 'Accounts',
-      tabBarIcon: ({ tintColor }) => (
+      tabBarIcon: () => (
         <Icon name='piggy-bank' size={26} />
       )
     }
