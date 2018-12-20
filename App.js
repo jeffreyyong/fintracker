@@ -8,10 +8,12 @@
 
 import React, { Component } from 'react';
 import firebase from 'firebase';
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Header from './src/components/Header';
+import Accounts from './src/components/Accounts';
 
 
-export default class App extends Component {
+export class Home extends Component {
   componentWillMount() {
     firebase.initializeApp({
       apiKey: 'AIzaSyBztf5bLDf6vsdxHm4tgJF_Ax1smh6cipM',
@@ -25,8 +27,19 @@ export default class App extends Component {
 
   render() {
     return (
-      <Header headerText={'Trillionaire'} />
+      <Header headerText={'Home'} />
     );
   }
 }
 
+const BottomNavigator = createBottomTabNavigator({
+  Home: {
+    screen: Home
+  },
+  Accounts: {
+    screen: Accounts
+  },
+});
+
+const App = createAppContainer(BottomNavigator);
+export default App;
