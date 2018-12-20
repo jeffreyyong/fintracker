@@ -9,6 +9,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import Header from './src/components/Header';
 import Accounts from './src/components/Accounts';
 
@@ -34,10 +35,22 @@ export class Home extends Component {
 
 const BottomNavigator = createBottomTabNavigator({
   Home: {
-    screen: Home
+    screen: Home,
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: ({ tintColor }) => (
+        <Icon name='home' size={26} />
+      )
+    }
   },
   Accounts: {
-    screen: Accounts
+    screen: Accounts,
+    navigationOptions: {
+      tabBarLabel: 'Accounts',
+      tabBarIcon: ({ tintColor }) => (
+        <Icon name='piggy-bank' size={26} />
+      )
+    }
   },
 });
 
