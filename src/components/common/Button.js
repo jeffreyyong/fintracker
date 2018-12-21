@@ -1,46 +1,29 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const Button = ({ onPress, children }) => {
-    const { buttonStyle, textStyle } = styles;
+    const { buttonStyle } = styles;
 
     return (
         <View style={buttonStyle}>
             <TouchableOpacity onPress={onPress}>
-                <Text style={textStyle}>
-                    {children}
-                </Text>
+                <Icon name='sync-alt' size={20} color='#01a699' />
             </TouchableOpacity>
         </View>
     );
 };
 
 const styles = {
-    textStyle: {
-        // alignSelf: 'center',
-        color: '#007aff',
-        fontSize: 16,
-        fontWeight: '600',
-        paddingTop: 10,
-        paddingBottom: 10
-    },
     buttonStyle: {
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
-        paddingBottom: 10,
-        paddingRight: 20,
-        // flex: 1,
-        alignSelf: 'flex-end',
-        // justifyContent: 'flex-end',
-        // alignItems: 'flex-end',
-        // paddingBottom: 20,
-        // paddingRight: 20,
-        backgroundColor: '#fff',
-        // borderRadius: 5,
-        // borderWidth: 1,
-        borderColor: '#007aff',
-        // marginLeft: 5,
-        // marginRight: 5
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 14,
+        position: 'absolute',
+        marginRight: 20
     }
 };
 
