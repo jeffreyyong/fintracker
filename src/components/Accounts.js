@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { View, ScrollView } from 'react-native';
+import { Picker, View, ScrollView } from 'react-native';
 import Header from './common/Header';
 import AccountDetail from './AccountDetail';
 import Spinner from './common/Spinner';

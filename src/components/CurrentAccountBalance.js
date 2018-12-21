@@ -41,9 +41,8 @@ const styles = {
         paddingLeft: 24
     },
     accountTypeTextStyle: {
-        fontSize: 17,
-        fontWeight: '900',
-        textShadowColor: '#d3d3d3',
+        fontSize: 15,
+        fontWeight: '700',
         color: '#696969'
     },
     totalBalanceTextStyle: {
