@@ -17,7 +17,7 @@ const CurrentAccountBalance = ({ balance }) => {
                     <Text style={accountTypeTextStyle}>Current Accounts</Text>
                 </View>
                 <View style={balanceContainerStyle}>
-                    <Text style={totalBalanceTextStyle}>{balance}</Text>
+                    <Text style={totalBalanceTextStyle}>£{balance}</Text>
                 </View>
             </CardSection>
         </TopCard>
@@ -29,20 +29,21 @@ const styles = {
     balanceContainerStyle: {
         flex: 1,
         flexDirection: 'row',
+        alignItems: 'center',
         justifyContent: 'flex-end',
-        paddingRight: 10
+        paddingRight: 5
     },
     accountContainerStyle: {
         flex: 1,
         flexDirection: 'row',
+        alignItems: 'center',
         justifyContent: 'flex-start',
-        paddingLeft: 10
+        paddingLeft: 24
     },
     accountTypeTextStyle: {
-        fontSize: 15,
-        fontWeight: '700',
+        fontSize: 17,
+        fontWeight: '500',
         textShadowColor: '#d3d3d3',
-        color: '#a9a9a9'
     },
     totalBalanceTextStyle: {
         fontSize: 15,

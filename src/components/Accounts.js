@@ -50,7 +50,9 @@ export default class Accounts extends Component {
     }
 
     calculateTotalBalance() {
-        return '23';
+        return this.state.accounts.reduce((accumulator, account) =>
+            accumulator + account.balance, 0
+        );
     }
 
     renderAccounts() {
@@ -68,7 +70,6 @@ export default class Accounts extends Component {
             <SyncButton onPress={this.onSyncButtonPress.bind(this)} />
         );
     }
-
 
 
     render() {
@@ -90,4 +91,3 @@ export default class Accounts extends Component {
 function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
-

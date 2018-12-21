@@ -42,7 +42,7 @@ const AccountDetail = ({ account }) => {
                     <Text style={lastUpdatedTextStyle}>Updated {last_updated}</Text>
                 </View>
                 <View style={balanceContainerStyle}>
-                    <Text style={balanceTextStyle}>{balance}</Text>
+                    <Text style={balanceTextStyle}>£{balance}</Text>
                 </View>
             </CardSection>
         </Card>
