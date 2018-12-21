@@ -48,7 +48,7 @@ const BottomNavigator = createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: 'Accounts',
       tabBarIcon: () => (
-        <Icon name='piggy-bank' size={26} />
+        <Icon name='book' size={26} />
       )
     }
   },

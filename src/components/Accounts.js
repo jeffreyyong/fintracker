@@ -5,6 +5,7 @@ import Header from './common/Header';
 import AccountDetail from './AccountDetail';
 import Spinner from './common/Spinner';
 import SyncButton from './common/SyncButton';
+import Button from './common/Button';
 import CurrentAccountBalance from './CurrentAccountBalance';
 
 export default class Accounts extends Component {
@@ -26,6 +27,10 @@ export default class Accounts extends Component {
             },
         ];
         this.setState({ accounts: data });
+    }
+
+    onAddOrCustomiseAccountsPress() {
+        console.log('Pressed');
     }
 
     onSyncButtonPress() {
@@ -75,7 +80,7 @@ export default class Accounts extends Component {
     render() {
         console.log(this.state);
         return (
-            <ScrollView>
+            <ScrollView style={styles.viewContainerStyle}>
                 <View>
                     <Header headerText={'Accounts'}>
                         {this.renderButton()}
@@ -83,6 +88,11 @@ export default class Accounts extends Component {
                 </View>
                 <CurrentAccountBalance balance={this.calculateTotalBalance()} />
                 {this.renderAccounts()}
+                <View style={styles.addOrCustomiseAccountsContainerStyle}>
+                    <Button onPress={this.onAddOrCustomiseAccountsPress.bind(this)}>
+                        Add or customise accounts
+                    </Button>
+                </View>
             </ScrollView>
         );
     }
@@ -91,3 +101,13 @@ export default class Accounts extends Component {
 function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
+
+const styles = {
+    addOrCustomiseAccountsContainerStyle: {
+        marginTop: 200,
+    },
+    viewContainerStyle: {
+        flex: 1,
+        backgroundColor: '#F0F8FF',    
+    },
+};

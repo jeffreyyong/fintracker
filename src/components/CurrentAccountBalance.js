@@ -42,14 +42,15 @@ const styles = {
     },
     accountTypeTextStyle: {
         fontSize: 17,
-        fontWeight: '500',
+        fontWeight: '900',
         textShadowColor: '#d3d3d3',
+        color: '#696969'
     },
     totalBalanceTextStyle: {
         fontSize: 15,
         fontWeight: '700',
         textShadowColor: '#d3d3d3',
-        color: '#a9a9a9'
+        color: '#20B2AA'
     },
 };
 

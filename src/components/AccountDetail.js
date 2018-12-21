@@ -58,7 +58,8 @@ const styles = {
         fontSize: 15
     },
     lastUpdatedTextStyle: {
-        fontSize: 11
+        fontSize: 11,
+        color: '#808080'
     },
     thumbnailStyle: {
         height: 50,
