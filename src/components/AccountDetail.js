@@ -16,6 +16,17 @@ const AccountDetail = ({ account }) => {
         balanceTextStyle,
         imageStyle
     } = styles;
+    // console.log(logo);
+    let testing = '';
+
+    switch (logo) {
+        case 'monzo.jpg':
+             testing = require('../../asset/logo/monzo.jpg'); 
+             break;
+        case 'lloyds.jpg':
+             testing = require('../../asset/logo/lloyds.jpg');
+             break;
+    }
 
     return (
         <Card>
@@ -23,7 +34,7 @@ const AccountDetail = ({ account }) => {
                 <View style={thumbnailContainerStyle}>
                     <Image
                         style={thumbnailStyle}
-                        source={{ uri: logo }}
+                        source={testing}
                     />
                 </View>
                 <View style={headerContentStyle}>
