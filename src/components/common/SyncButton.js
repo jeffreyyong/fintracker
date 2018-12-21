@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-const Button = ({ onPress, children }) => {
+const SyncButton = ({ onPress }) => {
     const { buttonStyle } = styles;
 
     return (
@@ -27,5 +27,5 @@ const styles = {
     }
 };
 
-export default Button;
+export default SyncButton;
 

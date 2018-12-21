@@ -4,7 +4,8 @@ import { View, ScrollView } from 'react-native';
 import Header from './common/Header';
 import AccountDetail from './AccountDetail';
 import Spinner from './common/Spinner';
-import Button from './common/Button';
+import SyncButton from './common/SyncButton';
+import CurrentAccountBalance from './CurrentAccountBalance';
 
 export default class Accounts extends Component {
     state = { accounts: [], loading: false };
@@ -13,13 +14,13 @@ export default class Accounts extends Component {
         const data = [
             {
                 name: 'Monzo UK Current Account',
-                balance: '£123.00',
+                balance: 123.00,
                 last_updated: '1 hour ago',
                 logo: 'monzo.jpg'
             },
             {
                 name: 'Lloyds Classic Current Account',
-                balance: '£2.49',
+                balance: 2.49,
                 last_updated: '1 hour ago',
                 logo: 'lloyds.jpg'
             },
@@ -31,13 +32,13 @@ export default class Accounts extends Component {
         const latestData = [
             {
                 name: 'Monzo UK Current Account',
-                balance: '£123.00',
+                balance: 123.00,
                 last_updated: 'just now',
                 logo: 'monzo.jpg'
             },
             {
                 name: 'Lloyds Classic Current Account',
-                balance: '£12879.49',
+                balance: 2879.49,
                 last_updated: 'just now',
                 logo: 'lloyds.jpg'
             },
@@ -46,6 +47,10 @@ export default class Accounts extends Component {
         sleep(3000).then(() => {
             this.setState({ accounts: latestData, loading: false });
         });
+    }
+
+    calculateTotalBalance() {
+        return '23';
     }
 
     renderAccounts() {
@@ -60,11 +65,11 @@ export default class Accounts extends Component {
         }
 
         return (
-            <Button onPress={this.onSyncButtonPress.bind(this)}>
-                Sync
-            </Button>
+            <SyncButton onPress={this.onSyncButtonPress.bind(this)} />
         );
     }
+
+
 
     render() {
         console.log(this.state);
@@ -75,6 +80,7 @@ export default class Accounts extends Component {
                         {this.renderButton()}
                     </Header>
                 </View>
+                <CurrentAccountBalance balance={this.calculateTotalBalance()} />
                 {this.renderAccounts()}
             </ScrollView>
         );

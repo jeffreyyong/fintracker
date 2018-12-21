@@ -6,7 +6,7 @@ const Spinner = ({ size }) => {
         <View style={styles.spinnerStyle}>
             <ActivityIndicator
                 size={size}
-                color='#00ff00'
+                color='#01a699'
                 animating
             />
         </View>
@@ -17,8 +17,8 @@ const styles = {
     spinnerStyle: {
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
-        paddingBottom: 20,
-        paddingRight: 20
+        paddingBottom: 24,
+        paddingRight: 10,
     }
 };
 
