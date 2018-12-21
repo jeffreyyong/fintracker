@@ -2,10 +2,13 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 const Header = (props) => {
-    const { textStyle, viewStyle } = styles;
+    const { textStyle, viewStyle, textContainerStyle } = styles;
     return (
         <View style={viewStyle}>
-            <Text style={textStyle}>{props.headerText}</Text>
+            <View style={textContainerStyle}>
+                <Text style={textStyle}>{props.headerText}</Text>
+            </View>
+            {props.children}
         </View>
     );
 };
@@ -13,8 +16,6 @@ const Header = (props) => {
 const styles = {
     viewStyle: {
         backgroundColor: '#191970',
-        justifyContent: 'center',
-        alignItems: 'center',
         height: 80,
         paddingTop: 40,
         paddingBottom: 20,
@@ -23,6 +24,10 @@ const styles = {
         shadowOpacity: 0.2,
         elevation: 2,
         position: 'relative'
+    },
+    textContainerStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     textStyle: {
         fontSize: 20,

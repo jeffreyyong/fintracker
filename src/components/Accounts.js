@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import Header from './common/Header';
 import AccountDetail from './AccountDetail';
+import Spinner from './common/Spinner';
 
 export default class Accounts extends Component {
     state = { accounts: [] };
@@ -34,7 +35,11 @@ export default class Accounts extends Component {
         console.log(this.state);
         return (
             <ScrollView>
-                <Header headerText={'Accounts'} />
+                <View>
+                    <Header headerText={'Accounts'}>
+                        <Spinner size="large" />
+                    </Header>
+                </View>
                 {this.renderAccounts()}
             </ScrollView>
         );

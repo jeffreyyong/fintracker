@@ -1,8 +1,7 @@
 import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import Card from './common/Card';
 import CardSection from './common/CardSection';
-import Button from './common/Button';
 
 const AccountDetail = ({ account }) => {
     const { name, balance, last_updated, logo } = account;
@@ -14,18 +13,19 @@ const AccountDetail = ({ account }) => {
         balanceContainerStyle,
         lastUpdatedTextStyle,
         balanceTextStyle,
-        imageStyle
     } = styles;
-    // console.log(logo);
-    let testing = '';
 
+    let icon = '';
+    
     switch (logo) {
         case 'monzo.jpg':
-             testing = require('../../asset/logo/monzo.jpg'); 
+        icon = require('../../asset/logo/monzo.jpg'); 
              break;
         case 'lloyds.jpg':
-             testing = require('../../asset/logo/lloyds.jpg');
+        icon = require('../../asset/logo/lloyds.jpg');
              break;
+        default:
+        icon = '';
     }
 
     return (
@@ -34,7 +34,7 @@ const AccountDetail = ({ account }) => {
                 <View style={thumbnailContainerStyle}>
                     <Image
                         style={thumbnailStyle}
-                        source={testing}
+                        source={icon}
                     />
                 </View>
                 <View style={headerContentStyle}>
