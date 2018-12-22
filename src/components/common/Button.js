@@ -31,6 +31,7 @@ const styles = {
     borderRadius: 20,
     borderWidth: 1,
     borderColor: '#fff',
+    marginTop: 200,
     marginLeft: 50,
     marginRight: 50
   }

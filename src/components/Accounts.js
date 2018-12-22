@@ -7,7 +7,7 @@ import Spinner from './common/Spinner';
 import SyncButton from './common/SyncButton';
 import Button from './common/Button';
 import CurrentAccountBalance from './CurrentAccountBalance';
-import ModalPicker from './common/Modal';
+// import ModalPicker from './common/Modal'; 
 
 export default class Accounts extends Component {
     state = { accounts: [], loading: false, isModalVisible: false };
@@ -93,12 +93,15 @@ export default class Accounts extends Component {
                 </View>
                 <CurrentAccountBalance balance={this.calculateTotalBalance()} />
                 {this.renderAccounts()}
-                <View style={styles.addOrCustomiseAccountsContainerStyle}>
+                <Button onPress={this.onAddOrCustomiseAccountsPress.bind(this)}>
+                    Add or customise accounts
+                </Button>
+                {/* <View style={styles.addOrCustomiseAccountsContainerStyle}>
                     <ModalPicker 
                         onPress={this.toggleModal.bind(this)} 
                         isModalVisible={this.state.isModalVisible} 
                     />
-                </View>
+                </View> */}
             </ScrollView>
         );
     }
