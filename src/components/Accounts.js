@@ -7,6 +7,7 @@ import Spinner from './common/Spinner';
 import SyncButton from './common/SyncButton';
 import Button from './common/Button';
 import CurrentAccountBalance from './CurrentAccountBalance';
+import Router from '../Router';
 // import ModalPicker from './common/Modal'; 
 
 export default class Accounts extends Component {
@@ -102,6 +103,7 @@ export default class Accounts extends Component {
                         isModalVisible={this.state.isModalVisible} 
                     />
                 </View> */}
+                {/* <Router /> */}
             </ScrollView>
         );
     }
