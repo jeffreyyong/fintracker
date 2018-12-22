@@ -1,4 +1,6 @@
-import { Component } from 'react';
+
+import React, { Component } from 'react';
+import { ScrollView, Image } from 'react-native';
 import firebase from 'firebase';
 
 
@@ -19,7 +21,26 @@ export default class Home extends Component {
     }
 
     render() {
-        return null;
+        return (
+            <ScrollView>
+                <Image
+                    source={require('../../../asset/logo/bank.jpg')}
+                    styles={styles.backgroundImage}
+                />
+                <Image
+                    source={require('../../../asset/logo/bank.jpg')}
+                    styles={styles.backgroundImage}
+                />
+            </ScrollView>
+        );
     }
 }
+
+
+const styles = {
+    backgroundImage: {
+        flex: 1,
+        resizeMode: 'cover',
+    }
+};
 

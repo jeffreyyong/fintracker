@@ -54,7 +54,7 @@ const BankDetail = ({ bank }) => {
             </CardSection>
         </Card>
 
-    )
+    );
 };
 
 
