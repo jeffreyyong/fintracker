@@ -6,6 +6,7 @@ import {
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Accounts from './components/Account/Accounts';
+import Acc from './components/Account/index';
 import Home from './components/Home';
 
 
@@ -20,7 +21,7 @@ const BottomNavigator = createBottomTabNavigator({
         }
     },
     Accounts: {
-        screen: Accounts,
+        screen: Acc,
         navigationOptions: {
             tabBarLabel: 'Accounts',
             tabBarIcon: () => (

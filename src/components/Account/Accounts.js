@@ -13,6 +13,10 @@ import Router from '../../Router';
 export default class Accounts extends Component {
     state = { accounts: [], loading: false, isModalVisible: false };
 
+    static navigationOptions = {
+        title: 'Accounts',
+    };
+
     componentWillMount() {
         const data = [
             {
@@ -32,7 +36,7 @@ export default class Accounts extends Component {
     }
 
     onAddOrCustomiseAccountsPress() {
-        console.log('Pressed');
+        this.props.navigation.navigate("AccountAdd")
     }
 
     onSyncButtonPress() {
@@ -88,9 +92,9 @@ export default class Accounts extends Component {
         return (
             <ScrollView style={styles.viewContainerStyle}>
                 <View>
-                    <Header headerText={'Accounts'}>
+                    {/* <Header headerText={'Accounts'}>
                         {this.renderButton()}
-                    </Header>
+                    </Header> */}
                 </View>
                 <CurrentAccountBalance balance={this.calculateTotalBalance()} />
                 {this.renderAccounts()}
