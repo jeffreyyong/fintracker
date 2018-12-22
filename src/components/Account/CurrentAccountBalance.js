@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native';
 import React from 'react';
-import TopCard from './common/TopCard';
-import CardSection from './common/CardSection';
+import TopCard from '../common/TopCard';
+import CardSection from '../common/CardSection';
 
 const CurrentAccountBalance = ({ balance }) => {
     const {

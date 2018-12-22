@@ -1,13 +1,13 @@
 
 import React, { Component } from 'react';
 import { Picker, View, ScrollView } from 'react-native';
-import Header from './common/Header';
+import Header from '../common/Header';
 import AccountDetail from './AccountDetail';
-import Spinner from './common/Spinner';
-import SyncButton from './common/SyncButton';
-import Button from './common/Button';
+import Spinner from '../common/Spinner';
+import SyncButton from '../common/SyncButton';
+import Button from '../common/Button';
 import CurrentAccountBalance from './CurrentAccountBalance';
-import Router from '../Router';
+import Router from '../../Router';
 // import ModalPicker from './common/Modal'; 
 
 export default class Accounts extends Component {

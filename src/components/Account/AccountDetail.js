@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
-import Card from './common/Card';
-import CardSection from './common/CardSection';
+import Card from '../common/Card';
+import CardSection from '../common/CardSection';
 
 const AccountDetail = ({ account }) => {
     const { name, balance, last_updated, logo } = account;
