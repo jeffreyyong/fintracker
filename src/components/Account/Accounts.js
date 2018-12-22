@@ -1,11 +1,10 @@
 
 import React, { Component } from 'react';
-import { Picker, View, ScrollView } from 'react-native';
+import { Picker, View, ScrollView, Button } from 'react-native';
 import Header from '../common/Header';
 import AccountDetail from './AccountDetail';
 import Spinner from '../common/Spinner';
 import SyncButton from '../common/SyncButton';
-import Button from '../common/Button';
 import CurrentAccountBalance from './CurrentAccountBalance';
 import Router from '../../Router';
 // import ModalPicker from './common/Modal'; 
@@ -36,7 +35,7 @@ export default class Accounts extends Component {
     }
 
     onAddOrCustomiseAccountsPress() {
-        this.props.navigation.navigate("AccountAdd")
+        this.props.navigation.navigate('AccountAdd');
     }
 
     onSyncButtonPress() {
@@ -55,7 +54,7 @@ export default class Accounts extends Component {
             },
         ];
         this.setState({ loading: true });
-        sleep(3000).then(() => {
+        sleep(2000).then(() => {
             this.setState({ accounts: latestData, loading: false });
         });
     }
@@ -72,9 +71,9 @@ export default class Accounts extends Component {
         );
     }
 
-    renderButton() {
+    renderSyncButton() {
         if (this.state.loading) {
-            return <Spinner size="large" />;
+            return <Spinner size='small' />;
         }
 
         return (
@@ -91,23 +90,13 @@ export default class Accounts extends Component {
         console.log(this.state);
         return (
             <ScrollView style={styles.viewContainerStyle}>
-                <View>
-                    {/* <Header headerText={'Accounts'}>
-                        {this.renderButton()}
-                    </Header> */}
-                </View>
-                <CurrentAccountBalance balance={this.calculateTotalBalance()} />
+                <CurrentAccountBalance balance={this.calculateTotalBalance()}>
+                    {this.renderSyncButton()}
+                </CurrentAccountBalance>
                 {this.renderAccounts()}
-                <Button onPress={this.onAddOrCustomiseAccountsPress.bind(this)}>
+                {/* <Button onPress={this.onAddOrCustomiseAccountsPress.bind(this)}>
                     Add or customise accounts
-                </Button>
-                {/* <View style={styles.addOrCustomiseAccountsContainerStyle}>
-                    <ModalPicker 
-                        onPress={this.toggleModal.bind(this)} 
-                        isModalVisible={this.state.isModalVisible} 
-                    />
-                </View> */}
-                {/* <Router /> */}
+                </Button> */}
             </ScrollView>
         );
     }

@@ -16,14 +16,6 @@ const SyncButton = ({ onPress }) => {
 
 const styles = {
     buttonStyle: {
-        justifyContent: 'flex-end',
-        alignItems: 'flex-end',
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 14,
-        position: 'absolute',
-        marginRight: 20
     }
 };
 

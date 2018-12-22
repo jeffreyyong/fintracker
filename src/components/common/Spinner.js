@@ -17,8 +17,6 @@ const styles = {
     spinnerStyle: {
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
-        paddingBottom: 24,
-        paddingRight: 10,
     }
 };
 

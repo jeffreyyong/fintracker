@@ -3,12 +3,13 @@ import React from 'react';
 import TopCard from '../common/TopCard';
 import CardSection from '../common/CardSection';
 
-const CurrentAccountBalance = ({ balance }) => {
+const CurrentAccountBalance = ({ balance, children }) => {
     const {
         balanceContainerStyle,
         accountTypeTextStyle,
         totalBalanceTextStyle,
         accountContainerStyle,
+        spinnerContainerStyle,
     } = styles;
     return (       
         <TopCard>
@@ -19,6 +20,9 @@ const CurrentAccountBalance = ({ balance }) => {
                 <View style={balanceContainerStyle}>
                     <Text style={totalBalanceTextStyle}>£{balance}</Text>
                 </View>
+                <View style={spinnerContainerStyle}>
+                    {children}
+                </View>
             </CardSection>
         </TopCard>
 
@@ -26,7 +30,7 @@ const CurrentAccountBalance = ({ balance }) => {
 };
 
 const styles = {
-    balanceContainerStyle: {
+    spinnerContainerStyle: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
@@ -36,9 +40,16 @@ const styles = {
     accountContainerStyle: {
         flex: 1,
         flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        justifyContent: 'space-between',
         paddingLeft: 24
+    },
+    balanceContainerStyle: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingLeft: 33
     },
     accountTypeTextStyle: {
         fontSize: 15,
