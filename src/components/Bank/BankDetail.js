@@ -3,7 +3,7 @@ import { Text, View, Image, TouchableOpacity } from 'react-native';
 import Card from '../common/Card';
 import CardSection from '../common/CardSection';
 
-const BankDetail = ({ bank }) => {
+const BankDetail = ({ bank, children }) => {
     const { name, logo } = bank;
 
     const {
@@ -11,9 +11,6 @@ const BankDetail = ({ bank }) => {
         thumbnailContainerStyle,
         bankNameContainerStyle,
         bankNameTextStyle,
-        addBankButtonContainerStyle,
-        buttonTextStyle,
-        addBankButtonStyle,
     } = styles;
 
     let icon = '';
@@ -49,14 +46,7 @@ const BankDetail = ({ bank }) => {
                 <View style={bankNameContainerStyle}>
                     <Text style={bankNameTextStyle}>{name}</Text>
                 </View>
-                <View style={addBankButtonContainerStyle}>
-                    <TouchableOpacity 
-                        style={addBankButtonStyle} 
-                        onPress={() => alert(name)}
-                    >
-                        <Text style={buttonTextStyle}>ADD</Text>
-                    </TouchableOpacity>
-                </View>
+                {children}
             </CardSection>
         </Card>
 
@@ -85,30 +75,6 @@ const styles = {
     bankNameTextStyle: {
         fontWeight: '500'
     },
-    addBankButtonContainerStyle: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-    },
-    addBankButtonStyle: {
-        // flex: 1,
-        height: 35,
-        width: 60,
-        // alignSelf: 'stretch',
-        backgroundColor: '#fff',
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: '#007aff',
-    },
-    buttonTextStyle: {
-        alignSelf: 'center',
-        color: '#007aff',
-        fontSize: 12,
-        fontWeight: '600',
-        paddingTop: 10,
-        paddingBottom: 10
-    }
 };
 
 export default BankDetail;

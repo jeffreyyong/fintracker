@@ -9,7 +9,7 @@ export default createStackNavigator({
     initialRouteName: 'Accounts',
     defaultNavigationOptions: {
         headerStyle: {
-            backgroundColor: '#191970',
+            backgroundColor: '#00cc88',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
