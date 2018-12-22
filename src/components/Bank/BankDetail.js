@@ -33,6 +33,9 @@ const BankDetail = ({ bank }) => {
         default:
             icon = '';
     }
+    // onAddButtonPress(name) {
+
+    // }
 
     return (
         <Card>
@@ -47,7 +50,10 @@ const BankDetail = ({ bank }) => {
                     <Text style={bankNameTextStyle}>{name}</Text>
                 </View>
                 <View style={addBankButtonContainerStyle}>
-                    <TouchableOpacity style={addBankButtonStyle} onPress={() => console.log('This is pressed')}>
+                    <TouchableOpacity 
+                        style={addBankButtonStyle} 
+                        onPress={() => alert(name)}
+                    >
                         <Text style={buttonTextStyle}>ADD</Text>
                     </TouchableOpacity>
                 </View>
@@ -87,8 +93,8 @@ const styles = {
     },
     addBankButtonStyle: {
         // flex: 1,
-        height: 40,
-        width: 50,
+        height: 35,
+        width: 60,
         // alignSelf: 'stretch',
         backgroundColor: '#fff',
         borderRadius: 5,
@@ -98,7 +104,7 @@ const styles = {
     buttonTextStyle: {
         alignSelf: 'center',
         color: '#007aff',
-        fontSize: 16,
+        fontSize: 12,
         fontWeight: '600',
         paddingTop: 10,
         paddingBottom: 10
