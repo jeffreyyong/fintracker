@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     createBottomTabNavigator,
-    createStackNavigator,
     createAppContainer,
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';

@@ -1,21 +1,19 @@
 
 import React, { Component } from 'react';
-import { Picker, View, ScrollView } from 'react-native';
-import Header from '../common/Header';
+import { ScrollView } from 'react-native';
 import AccountDetail from './AccountDetail';
 import Spinner from '../common/Spinner';
 import SyncButton from '../common/SyncButton';
 import CurrentAccountBalance from './CurrentAccountBalance';
-import Router from '../../Router';
 import Button from '../common/Button';
-// import ModalPicker from './common/Modal'; 
 
 export default class Accounts extends Component {
-    state = { accounts: [], loading: false, isModalVisible: false };
-
     static navigationOptions = {
         title: 'Accounts',
     };
+
+    state = { accounts: [], loading: false, isModalVisible: false };
+
 
     componentWillMount() {
         const data = [
@@ -66,6 +64,10 @@ export default class Accounts extends Component {
         );
     }
 
+    toggleModal() {
+        this.setState({ isModalVisible: !this.state.isModalVisible });
+    }
+
     renderAccounts() {
         return this.state.accounts.map(account =>
             <AccountDetail key={account.name} account={account} />
@@ -82,13 +84,8 @@ export default class Accounts extends Component {
         );
     }
 
-    toggleModal() {
-        this.setState({ isModalVisible: !this.state.isModalVisible });
-    }
-
 
     render() {
-        console.log(this.state);
         return (
             <ScrollView style={styles.viewContainerStyle}>
                 <CurrentAccountBalance balance={this.calculateTotalBalance()}>
