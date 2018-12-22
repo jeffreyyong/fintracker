@@ -1,12 +1,13 @@
 
 import React, { Component } from 'react';
-import { Picker, View, ScrollView, Button } from 'react-native';
+import { Picker, View, ScrollView } from 'react-native';
 import Header from '../common/Header';
 import AccountDetail from './AccountDetail';
 import Spinner from '../common/Spinner';
 import SyncButton from '../common/SyncButton';
 import CurrentAccountBalance from './CurrentAccountBalance';
 import Router from '../../Router';
+import Button from '../common/Button';
 // import ModalPicker from './common/Modal'; 
 
 export default class Accounts extends Component {
@@ -94,9 +95,9 @@ export default class Accounts extends Component {
                     {this.renderSyncButton()}
                 </CurrentAccountBalance>
                 {this.renderAccounts()}
-                {/* <Button onPress={this.onAddOrCustomiseAccountsPress.bind(this)}>
+                <Button onPress={this.onAddOrCustomiseAccountsPress.bind(this)}>
                     Add or customise accounts
-                </Button> */}
+                </Button>
             </ScrollView>
         );
     }
