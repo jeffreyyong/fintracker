@@ -5,7 +5,7 @@ import {
     createAppContainer,
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Accounts from './components/Accounts';
+import Accounts from './components/Account/Accounts';
 import Home from './components/Home';
 
 
