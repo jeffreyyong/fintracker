@@ -5,14 +5,13 @@ import {
     createAppContainer,
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Accounts from './components/Account/Accounts';
 import Acc from './components/Account/index';
-import Home from './components/Home';
+import Dashboard from './components/Dashboard/index';
 
 
 const BottomNavigator = createBottomTabNavigator({
     Home: {
-        screen: Home,
+        screen: Dashboard,
         navigationOptions: {
             tabBarLabel: 'Home',
             tabBarIcon: () => (

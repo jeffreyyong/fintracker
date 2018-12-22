@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
-import Header from './common/Header';
 
 
 export default class Home extends Component {
+    static navigationOptions = {
+        title: 'Dashboards',
+    };
+
     componentWillMount() {
         firebase.initializeApp({
             apiKey: 'AIzaSyBztf5bLDf6vsdxHm4tgJF_Ax1smh6cipM',
@@ -16,9 +19,7 @@ export default class Home extends Component {
     }
 
     render() {
-        return (
-            <Header headerText={'Home'} />
-        );
+        return null;
     }
 }
 
