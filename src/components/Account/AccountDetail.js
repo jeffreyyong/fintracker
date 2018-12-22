@@ -19,10 +19,10 @@ const AccountDetail = ({ account }) => {
     
     switch (logo) {
         case 'monzo.jpg':
-        icon = require('../../asset/logo/monzo.jpg'); 
+        icon = require('../../../asset/logo/monzo.jpg'); 
              break;
         case 'lloyds.jpg':
-        icon = require('../../asset/logo/lloyds.jpg');
+        icon = require('../../../asset/logo/lloyds.jpg');
              break;
         default:
         icon = '';
