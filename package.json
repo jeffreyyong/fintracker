@@ -20,6 +20,7 @@
     "react-native-spinkit": "^1.1.1",
     "react-native-vector-icons": "^6.1.0",
     "react-navigation": "^3.0.9",
+    "recompose": "^0.30.0",
     "utf-8": "^2.0.0",
     "utf8": "^3.0.0"
   },
